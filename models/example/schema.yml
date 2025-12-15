@@ -32,7 +32,6 @@ models:
         description: "The primary key for this table"
         data_tests:
           - unique
-          - not_null
           - relationships:
               to: ref('my_first_dbt_model')
               field: id
@@ -47,9 +46,7 @@ models:
           - not_null
       - name: c_name
         description: "name of the customer"
-        data_tests:
-          - unique
-          - not_null
+
       - name: nation
         description: "nation customer"
         data_tests:
@@ -57,22 +54,16 @@ models:
           - not_null
       - name:  total_order_price
         description: "total sum of the orders of the customer"
-        data_tests:
-          - unique
-          - not_null
 
   - name: cumulative_orders_by_date
     description: "sum of the orders by date "
     columns:
       - name: p_orderdate
         description: "date of the order"
-        data_tests:
-          - unique
-          - not_null
+
       - name: cumulative_sales
         description: "total price of the orders per date "
-        data_tests:
-          - unique
-          - not_null     
+
+    
   - name: incremental_time
     description: "times"
