@@ -16,7 +16,6 @@ models:
         data_tests:
           -  accepted_values:
               values: ['AUTOMOBILE', 'BUILDING', 'FURNITURE', 'MACHINERY', 'HOUSEHOLD']
-models:
   - name: my_first_dbt_model
     description: "A starter dbt model"
     columns:
@@ -67,3 +66,20 @@ models:
     
   - name: incremental_time
     description: "times"
+
+
+sources:
+  - name: sample
+    database: snowflake_sample_data
+    schema: tpch_sf1
+    tables:
+      - name: customer
+        columns:
+          - name: c_custkey
+            tests:
+              - unique
+              - not_null
+          - name: c_name
+          - name: c_nationkey
+          - name: c_mktsegment
+      - name: orders
