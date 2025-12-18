@@ -11,4 +11,4 @@ from order_sale
 {% if target.name == 'dev' %}
 where year(o_orderdate) = '1996'
 {% endif %}
-group by o_orderdate
+group by o_orderdate 
