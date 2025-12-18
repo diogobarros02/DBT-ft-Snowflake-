@@ -83,3 +83,9 @@ sources:
           - name: c_nationkey
           - name: c_mktsegment
       - name: orders
+  - name: sample2
+    database: snowflake_sample_data
+    schema: tpch_sf100
+    tables:
+      - name: customer
+        
